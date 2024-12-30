@@ -87,7 +87,7 @@ export const useCallState = create<CallStateStore>((set, get) => ({
           },
           model: {
             provider: 'openai' as const,
-            model: 'gpt-4' as const,
+            model: 'gpt-4o' as const,
             messages: [
               { role: 'system' as const, content: systemPrompt }
             ]
