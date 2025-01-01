@@ -385,7 +385,7 @@ export function PromptForm({ onSubmit, isLoading = false, restoredFormData, onFo
                             </ul>
                           </div>
                           <p className="text-sm font-medium">These risks exist whenever you enter API keys in a browser, whether stored or not. Consider entering your key each session if you prefer not to store it.</p>
-                          <p className="text-sm font-medium">I also recommend you create a special API key for use with this tool, and be sure to delete it when you no longer intend to use it for some time.</p>
+                          <p className="text-sm font-medium">I also recommend you create a special API keys for use with this tool, and be sure to delete them when you no longer intend to use the app for some time.</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
