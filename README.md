@@ -16,6 +16,7 @@ A modern web application for generating AI sales representative prompts. Built w
 - API keys are stored in browser localStorage for user convenience
 - This storage method is appropriate for user-provided third-party API keys
 - Users should be aware that browser extensions and dev tools can access stored keys
+- These risks exist whenever you enter API keys in a browser, whether stored or not
 - Ensure you trust the authors of your extensions, and anyone you allow to use your computer
 - Consider entering keys each session if preferred
 - Recommended to use dedicated API keys for this application
