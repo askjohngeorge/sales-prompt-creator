@@ -380,7 +380,7 @@ export function PromptForm({ onSubmit, isLoading = false, restoredFormData, onFo
                           <div className="space-y-2 text-sm font-medium">
                             <p>Your API key will be stored in your browser&apos;s localStorage. Please note:</p>
                             <ul className="list-disc pl-6 space-y-1.5 font-medium">
-                              <li>Browser extensions can access this key, so ensure you trust yours.</li>
+                              <li>Browser extensions can access these keys, so ensure you trust the authors of yours.</li>
                               <li>Keys are visible in browser dev tools, so ensure you trust anyone you let access them.</li>
                             </ul>
                           </div>
