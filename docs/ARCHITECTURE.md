@@ -81,9 +81,14 @@ interface OpenAIConfig {
 
 ## Security Considerations
 - OpenAI API key is stored only in the client's localStorage
+  - Appropriate for user-provided third-party API keys
+  - Protected by Next.js XSS prevention
+  - Limited to browser extension and dev tools access
+  - Users informed via UI tooltips
 - No server-side storage or processing
 - All API calls are made directly from the client to OpenAI
 - Input validation to prevent malicious content
+- No third-party script execution
 
 ## Performance Optimizations
 - Client-side rendering for instant feedback

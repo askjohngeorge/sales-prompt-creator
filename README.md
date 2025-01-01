@@ -11,6 +11,15 @@ A modern web application for generating AI sales representative prompts. Built w
 - 📱 Responsive design
 - ⚡ Real-time prompt generation
 
+## Security Considerations
+
+- API keys are stored in browser localStorage for user convenience
+- This storage method is appropriate for user-provided third-party API keys
+- Users should be aware that browser extensions and dev tools can access stored keys
+- Ensure you trust the authors of your extensions, and anyone you allow to use your computer
+- Consider entering keys each session if preferred
+- Recommended to use dedicated API keys for this application
+
 ## Try It Out
 
 This project is deployed on Vercel. Click [here](https://sales-prompt-creator.vercel.app/) to try it out.
