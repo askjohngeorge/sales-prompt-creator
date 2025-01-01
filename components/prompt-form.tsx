@@ -29,7 +29,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { ChevronDown, HelpCircle } from "lucide-react"
+import { ChevronDown, AlertCircle } from "lucide-react"
 import {
   Tooltip,
   TooltipContent,
@@ -373,10 +373,19 @@ export function PromptForm({ onSubmit, isLoading = false, restoredFormData, onFo
                     <TooltipProvider>
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <HelpCircle className="h-4 w-4 text-muted-foreground/70 hover:text-muted-foreground" />
+                          <AlertCircle className="h-6 w-6 text-destructive hover:text-destructive/70" />
                         </TooltipTrigger>
-                        <TooltipContent>
-                          <p className="text-xs">Your API keys will be saved locally</p>
+                        <TooltipContent className="max-w-[350px] bg-destructive text-destructive-foreground p-4 space-y-3 font-medium">
+                          <p className="font-semibold text-lg">Security Notice:</p>
+                          <div className="space-y-2 text-sm font-medium">
+                            <p>Your API key will be stored in your browser&apos;s localStorage. Please note:</p>
+                            <ul className="list-disc pl-6 space-y-1.5 font-medium">
+                              <li>Browser extensions can access this key, so ensure you trust yours.</li>
+                              <li>Keys are visible in browser dev tools, so ensure you trust anyone you let access them.</li>
+                            </ul>
+                          </div>
+                          <p className="text-sm font-medium">These risks exist whenever you enter API keys in a browser, whether stored or not. Consider entering your key each session if you prefer not to store it.</p>
+                          <p className="text-sm font-medium">I also recommend you create a special API key for use with this tool, and be sure to delete it when you no longer intend to use it for some time.</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
