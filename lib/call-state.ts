@@ -82,8 +82,6 @@ export const useCallState = create<CallStateStore>((set, get) => ({
             voiceId: 'JBFqnCBsd6RMkjVDRZzb' as const,
             stability: 0.6,
             similarityBoost: 0.75,
-            fillerInjectionEnabled: false,
-            optimizeStreamingLatency: 4,
           },
           model: {
             provider: 'openai' as const,
@@ -160,11 +158,9 @@ export const useCallState = create<CallStateStore>((set, get) => ({
     
     // Clean up client if it exists
     if (client) {
-      try {
-        client.stop()
-      } catch (error) {
+      client.stop().catch((error: unknown) => {
         console.error('Error cleaning up client:', error)
-      }
+      })
     }
 
     set({
