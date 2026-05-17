@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useMemo } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -113,6 +113,8 @@ export function PromptForm({ onSubmit, isLoading = false, restoredFormData, onFo
       additionalInfo: "",
     },
   })
+  const watchedApiKey = form.watch("apiKey")
+  const watchedVapiKey = form.watch("vapiKey")
 
   // Load saved form data from localStorage
   useEffect(() => {
@@ -154,11 +156,11 @@ export function PromptForm({ onSubmit, isLoading = false, restoredFormData, onFo
       const formData = form.getValues()
       onFormDataLoad?.(formData)
     }
-  }, [mounted, form.watch("vapiKey"), form.watch("apiKey"), onFormDataLoad])
+  }, [mounted, watchedApiKey, watchedVapiKey, form, onFormDataLoad])
 
   // Debounced save function
-  const debouncedSave = useCallback(
-    (() => {
+  const debouncedSave = useMemo(
+    () => {
       let timeoutId: NodeJS.Timeout | null = null;
       return (formData: FormValues & ApiKeyValues) => {
         if (timeoutId) {
@@ -198,7 +200,7 @@ export function PromptForm({ onSubmit, isLoading = false, restoredFormData, onFo
           timeoutId = null;
         }, 300);
       };
-    })(),
+    },
     []
   );
 
@@ -229,7 +231,7 @@ export function PromptForm({ onSubmit, isLoading = false, restoredFormData, onFo
         localStorage.removeItem(DELETED_DATA_KEY)
       }
     }
-  }, [form.formState.isDirty, mounted, debouncedSave, canUndo])
+  }, [form, form.formState.isDirty, mounted, debouncedSave, canUndo])
 
   // Handle restored form data
   useEffect(() => {

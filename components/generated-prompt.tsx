@@ -3,7 +3,7 @@
 import { CopyButton, DeleteButton, CallButton } from "./prompt-actions"
 import { CallErrorToast } from "./call-error-toast"
 import ReactMarkdown from "react-markdown"
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 import { PromptHistory } from "./prompt-history"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { FormValues, ApiKeyValues } from "./prompt-form"
@@ -40,6 +40,7 @@ export function GeneratedPrompt({
   const [history, setHistory] = useState<PromptHistoryItem[]>([])
   const [activeTab, setActiveTab] = useState("current")
   const [mounted, setMounted] = useState(false)
+  const initialPromptRef = useRef(prompt)
 
   useEffect(() => {
     setMounted(true)
@@ -53,7 +54,7 @@ export function GeneratedPrompt({
     }
 
     const savedPrompt = localStorage.getItem(CURRENT_PROMPT_KEY)
-    if (savedPrompt && !prompt) {
+    if (savedPrompt && !initialPromptRef.current) {
       onRestorePrompt(savedPrompt)
     }
   }, [onRestorePrompt])
