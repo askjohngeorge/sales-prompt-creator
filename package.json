@@ -2,17 +2,23 @@
   "name": "sales-prompt-creator",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "security:audit": "pnpm audit --audit-level low"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-select": "^2.1.2",
+    "@radix-ui/react-select": "^2.3.7",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.1",
@@ -23,7 +29,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.468.0",
-    "next": "15.5.18",
+    "next": "15.5.21",
     "openai": "^6.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -36,14 +42,14 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/eslintrc": "^3.3.6",
     "@tailwindcss/typography": "^0.5.15",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.18",
-    "postcss": "^8",
+    "eslint-config-next": "15.5.21",
+    "postcss": "^8.5.23",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
@@ -55,11 +61,14 @@
       "flatted@<3.4.2": "3.4.2",
       "@babel/runtime@<7.26.10": "7.26.10",
       "mdast-util-to-hast@>=13.0.0 <13.2.1": "13.2.1",
-      "brace-expansion@>=1.0.0 <1.1.13": "1.1.13",
-      "brace-expansion@>=2.0.0 <2.0.2": "2.0.2",
-      "brace-expansion@>=4.0.0 <5.0.5": "5.0.6",
+      "brace-expansion@>=1.0.0 <1.1.18": "1.1.18",
+      "brace-expansion@>=2.0.0 <2.1.2": "2.1.2",
+      "brace-expansion@>=4.0.0 <5.0.9": "5.0.9",
       "picomatch@<2.3.2": "2.3.2",
-      "postcss@<8.5.10": "8.5.10",
+      "js-yaml@>=4.0.0 <4.3.1": "4.3.1",
+      "nanoid@>=3.0.0 <3.3.18": "3.3.18",
+      "postcss@<8.5.23": "8.5.23",
+      "sharp@>=0.34.0 <0.35.0": "0.35.0",
       "yaml@>=2.0.0 <2.8.3": "2.8.3"
     }
   }

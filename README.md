@@ -31,7 +31,7 @@ This project is deployed on Vercel. Click [here](https://sales-prompt-creator.ve
 
 ## Prerequisites
 
-- Node.js 18.x or later
+- Node.js 22.x or later
 - OpenAI API key
 - pnpm (recommended) or npm
 
@@ -83,6 +83,8 @@ pnpm dev     # Start development server
 pnpm build   # Create production build
 pnpm start   # Start production server
 pnpm lint    # Run ESLint
+pnpm typecheck      # Check TypeScript types
+pnpm security:audit # Check dependencies for known vulnerabilities
 ```
 
 ## Deployment
