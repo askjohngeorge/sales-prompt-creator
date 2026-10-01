@@ -42,15 +42,15 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.6",
-    "@tailwindcss/typography": "^0.5.15",
+    "@eslint/eslintrc": "^3.3.7",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.21",
-    "postcss": "^8.5.23",
-    "tailwindcss": "^3.4.1",
+    "eslint-config-next": "15.5.26",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5"
   },
   "pnpm": {
