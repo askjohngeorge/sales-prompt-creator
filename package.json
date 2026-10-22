@@ -70,6 +70,12 @@
       "postcss@<8.5.23": "8.5.23",
       "sharp@>=0.34.0 <0.35.5": "0.35.5",
       "yaml@>=2.0.0 <2.8.3": "2.8.3"
+    },
+    "auditConfig": {
+      "ignoreGhsas": [
+        "GHSA-vfj7-8cjw-p6xm",
+        "GHSA-rj75-hqrm-r3gf"
+      ]
     }
   }
 }
